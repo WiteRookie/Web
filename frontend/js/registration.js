@@ -1,3 +1,4 @@
+// password confirmation code
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registrationForm");
     const password = document.getElementById("password");

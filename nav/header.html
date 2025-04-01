@@ -1,8 +1,8 @@
-<div class="p-5 bg-black text-white text-center">
+<div class="p-5 bg-dark text-white text-center">
     <h1>Business Name</h1>
     <p>"Helping to help someone"</p>
 </div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-black navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -20,8 +20,37 @@
           <a herf="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a>
         </li>
         <li class="nav-item ms-3">
-          <a class="nav-link" href="registration.html">Sign Up</a>
+          <a class="nav-link active" href="registration.html">Sign Up</a>
         </li>
       </ul>
     </div>
   </nav>
+</div>
+
+<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+ <div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            
+             <form>
+                 <div class="mb-3">
+                     <label for="username" class="form-label">Username</label>
+                     <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                 </div>
+                 <div class="mb-3">
+                     <label for="password" class="form-label">Password</label>
+                     <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                 </div>
+                 <div class="d-flex justify-content-between">
+                     <button type="submit" class="btn btn-primary">Sign In</button>
+                     <a href="#" class="btn btn-link">Forgot Password?</a>
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+</div>

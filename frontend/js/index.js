@@ -1,3 +1,4 @@
+// header and footer code
 fetch('/nav/header.html')
     .then(response => {
         if (!response.ok) {
