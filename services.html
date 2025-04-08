@@ -7,32 +7,183 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="./frontend/css/style.css" rel="stylesheet">
     <title>Business Name Services</title>
+    <style>
+        /* Removed yellow background color */
+        .highlight {
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        /* Add some space and style for donation boxes */
+        .donation-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            height: 250px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .donation-box h3 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .donation-box p {
+            text-align: center;
+        }
+
+        .donation-box button {
+            width: 100%;
+        }
+
+        /* Ensuring the charity boxes are stacked vertically */
+        #foundation-services {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+    </style>
 </head>
 <body>
+
     <div id="header-placeholder"></div>
-      <div class="article-section">
-        <div class="container article-container">
-            <h2 class="text-center text-white mb-6">Services</h2>
-            <ul class="list-group list-group-flush">      
 
+    <!-- Charity Section at the top -->
+    <section id="foundation-services" style="padding: 2rem;">
+        <h2>Services</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 350px;">
+            <!-- Money Donation -->
+            <div class="donation-box">
+                <h3>💰 Money Charity</h3>
+                <p class="highlight">Support those in need with financial donations. Every bit helps us reach more lives.</p>
+                <button onclick="donateNow('money')">Donate Now</button>
+            </div>
+
+            <!-- Clothes Donation -->
+            <div class="donation-box">
+                <h3>👕 Clothes Charity</h3>
+                <p class="highlight">Give your gently used clothes to those who need them most.</p>
+                <button onclick="donateNow('clothes')">Donate Clothes</button>
+            </div>
+
+            <!-- Food Donation -->
+            <div class="donation-box">
+                <h3>🍲 Food Charity</h3>
+                <p class="highlight">Help us provide meals to the hungry and support food drives in your area.</p>
+                <button onclick="donateNow('food')">Donate Food</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section in the middle (no highlight) -->
     <div class="container">
-      <div class="content">
-        <h2>About Us</h2>
-        <p>We provide high-quality services to help your business grow.</p>
-      </div>
+        <div class="content">
+            <h2>About Us</h2>
+            <p>We provide high-quality services to help your business grow. We strive to make a difference through our charity and community-driven initiatives.</p>
+        </div>
     </div>
 
+    <!-- Contact Us Section at the bottom (no highlight) -->
     <div class="container">
-      <div class="content">
-        <h2>Contact Us</h2>
-        <p>Email: contact@businessname.com</p>
-        <p>Phone: (123) 456-7890</p>
-      </div>
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Email: contact@businessname.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 123 Business Street, City, Country</p>
+        </div>
     </div>
-</div>
-<div id="footer-placeholder"></div>
 
-<script src="frontend\js\index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="footer-placeholder"></div>
+
+    <!-- Modal for Money Donation -->
+    <div class="modal fade" id="moneyModal" tabindex="-1" aria-labelledby="moneyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="moneyModalLabel">Money Donation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="moneyForm">
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Donation Amount (EUR)</label>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter donation amount" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donorName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="donorName" placeholder="Enter your name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Donate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Clothes Donation -->
+    <div class="modal fade" id="clothesModal" tabindex="-1" aria-labelledby="clothesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="clothesModalLabel">Clothes Donation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="clothesForm">
+                        <div class="mb-3">
+                            <label for="clothesDetails" class="form-label">Details of Clothes</label>
+                            <textarea class="form-control" id="clothesDetails" rows="3" placeholder="Enter details of clothes" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Donate Clothes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Food Donation -->
+    <div class="modal fade" id="foodModal" tabindex="-1" aria-labelledby="foodModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="foodModalLabel">Food Donation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="foodForm">
+                        <div class="mb-3">
+                            <label for="foodDetails" class="form-label">Details of Food</label>
+                            <textarea class="form-control" id="foodDetails" rows="3" placeholder="Enter details of food" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Donate Food</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="frontend/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function donateNow(type) {
+            // Show the relevant modal based on donation type
+            if (type === 'money') {
+                var myModal = new bootstrap.Modal(document.getElementById('moneyModal'));
+                myModal.show();
+            } else if (type === 'clothes') {
+                var myModal = new bootstrap.Modal(document.getElementById('clothesModal'));
+                myModal.show();
+            } else if (type === 'food') {
+                var myModal = new bootstrap.Modal(document.getElementById('foodModal'));
+                myModal.show();
+            }
+        }
+    </script>
+
 </body>
 </html>
