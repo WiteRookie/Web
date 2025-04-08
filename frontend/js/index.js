@@ -104,4 +104,36 @@ async function loginHandler(email, password) {
             alert(data.message);
         }
     }
+}document.addEventListener("DOMContentLoaded", function () {
+    const servicesContainer = document.getElementById("services-placeholder");
+    if (servicesContainer) {
+        servicesContainer.innerHTML = `
+            <section id="foundation-services" style="padding: 2rem;">
+                <h2>Our Charity Services</h2>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; border: 1px solid #ccc; padding: 1rem; border-radius: 10px;">
+                        <h3>💰 Money Charity</h3>
+                        <p>Support those in need with financial donations. Every bit helps us reach more lives.</p>
+                        <button onclick="donateNow('money')">Donate Now</button>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; border: 1px solid #ccc; padding: 1rem; border-radius: 10px;">
+                        <h3>👕 Clothes Charity</h3>
+                        <p>Give your gently used clothes to those who need them most.</p>
+                        <button onclick="donateNow('clothes')">Donate Clothes</button>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; border: 1px solid #ccc; padding: 1rem; border-radius: 10px;">
+                        <h3>🍲 Food Charity</h3>
+                        <p>Help us provide meals to the hungry and support food drives in your area.</p>
+                        <button onclick="donateNow('food')">Donate Food</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+});
+
+function donateNow(type) {
+    alert(`Thank you for choosing to donate: ${type.charAt(0).toUpperCase() + type.slice(1)}!`);
+    // Later you can redirect or open a donation form
+    // window.location.href = `/donate/${type}.html`;
 }
