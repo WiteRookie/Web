@@ -1,56 +1,36 @@
 
 // header and footer code
-fetch('/nav/header.html')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Header file not found');
-        }
-        return response.text();
-    })
+fetch('../frontend/sections/header.html')
+    .then(response => response.text())
     .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-
-        // login user
-        const loginForm = document.getElementById("loginForm");
-        if(loginForm){
-            loginForm.addEventListener("submit", async function(event) {
-                event.preventDefault();
-
-                const email = document.getElementById("loginEmail").value
-                const password = document.getElementById("loginPassword").value
-                loginHandler(email, password)
-            });
-        }
-    })
-    .catch(error => {
-        console.error('Error loading header:', error);
+        document.getElementById('header').innerHTML = data;
     });
 
-fetch('/nav/footer.html')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Footer file not found');
-        }
-        return response.text();
-    })
+fetch('../frontend/sections/footer.html')
+    .then(response => response.text())
     .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-        console.error('Error loading footer:', error);
+        document.getElementById('footer').innerHTML = data;
     });
 
-document.addEventListener("DOMContentLoaded", function() {
+// navLinks.addEventListener('click', function (e) {
+//     if (e.target.classList.contains('nav-link')) {
+//         document.querySelectorAll('#nav-links .nav-link').forEach(link => link.classList.remove('active'));
+//         e.target.classList.add('active');
+//     }
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
     // creating user
     const registrationForm = document.getElementById("registrationForm");
-    if(registrationForm){
+
+    if (registrationForm) {
         // taking all input values
-        const nameInput = document.getElementById("username")
+        const nameInput = document.getElementById("fullname")
         const emailInput = document.getElementById("email")
         const passInput = document.getElementById("password")
         const confirmPassInput = document.getElementById("confirmPassword")
 
-        registrationForm.addEventListener("submit", async function(event) {
+        registrationForm.addEventListener("submit", async function (event) {
             event.preventDefault();
 
 
@@ -60,51 +40,62 @@ document.addEventListener("DOMContentLoaded", function() {
             const confirmPassword = confirmPassInput.value;
 
 
-            if(password == confirmPassword){
+            if (password == confirmPassword) {
                 const response = await fetch("http://localhost:3000/register", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, password }),
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, password }),
                 });
                 const data = await response.json()
-                if(data?.status == 201){
-                    nameInput.value=""
-                    emailInput.value=""
-                    passInput.value=""
-                    confirmPassInput.value=""
+                if (data?.status == 201) {
+                    nameInput.value = ""
+                    emailInput.value = ""
+                    passInput.value = ""
+                    confirmPassInput.value = ""
                     alert(`${name}, your account created successfully`)
-                } else if(data?.status == 400){
+                    window.location.href = "../index.html"
+                } else if (data?.status == 400) {
                     alert(data.message)
                 }
-            }else{
+            } else {
                 alert("password didn't match")
             }
         });
     }
-    
+
+    const signinForm = document.getElementById("signinForm");
+    if(signinForm){
+        signinForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            if (!email || !password) {
+                alert("Both email and password are required!");
+                return;
+            } else {
+                const response = await fetch("http://localhost:3000/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password }),
+                });
+        
+                const data = await response.json();
+        
+                if (data?.status === 200) {
+                    alert("Login successful!");
+                    window.location.href = "../index.html"
+                } else if (data?.status === 400) {
+                    alert(data.message);
+                }
+            }
+        });
+    }
+
 });
 
-async function loginHandler(email, password) {
-    if (!email || !password) {
-        alert("Both email and password are required!");
-        return;
-    } else {
-        const response = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
-        });
 
-        const data = await response.json();
-
-        if (data?.status === 200) {
-            alert("Login successful!");
-            window.location.href = "index.html"
-        } else if (data?.status === 400) {
-            alert(data.message);
-        }
-    }
-}document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const servicesContainer = document.getElementById("services-placeholder");
     if (servicesContainer) {
         servicesContainer.innerHTML = `

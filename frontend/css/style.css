@@ -1,126 +1,114 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-image: url('/photos/mountain.png');
-  background-size: cover; 
-  background-position: center center; 
-  background-attachment: fixed; 
-}
+/* .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .nav-link.active {
+    font-weight: bold;
+    color: #0d6efd !important;
+  } */
 
-footer {
-  background: #333;
-  color: white;
-  padding: 1rem 0;
-  width: 100%;
-}
-.content {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);  
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  max-width: 800px;
-}
+  .hero {
+    background: url('../images/banner.jpg') no-repeat top center/cover;
+    height: 90vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
 
-header {
-  background: #333;
-  color: white;
-  padding: 1rem;
-  position: relative;
-}
+  /* styles of sign in page */
 
-.container {
-  margin-top: 30px;
-}
+  .signin-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .signin-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+/* styles for register page  */
 
-.navbar {
-  z-index: 1000; 
-}
+  .register-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
 
-.article-img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-.article-container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-}
+  /* styles for fund rising page  */
 
-.article-box {
-  padding: 20px;               
-  border: 2px solid white;     
-  border-radius: 10px;        
-  width: 100%;               
-  margin-bottom: 20px;        
-}
+  .hero-banner {
+    background: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4') center/cover no-repeat;
+    height: 60vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-banner h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
 
-.list-group-item {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px; 
-}
+  /* styles for about page  */
 
-.list-group-item div {
-  flex: 1;
-}
+  .hero-about {
+    background: url('../images/about_banner.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  .hero-about h1 {
+    font-size: 3rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
 
-.btn-outline-light {
-  border-color: white;
-  color: white;
-  background-color: transparent;
-}
+  /* styles for contact page  */
 
-.btn-outline-light:hover {
-  background-color: white;
-  color: black;
-  border-color: white;
-}
-
-        /* Removed yellow background color */
-        .highlight {
-          padding: 0.5rem;
-          border-radius: 5px;
-      }
-
-      /* Add some space and style for donation boxes */
-      .donation-box {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1rem;
-          border: 2px solid #ccc;
-          border-radius: 10px;
-          height: 250px;
-          justify-content: space-between;
-          align-items: center;
-      }
-
-      .donation-box h3 {
-          font-size: 1.5rem;
-          text-align: center;
-      }
-
-      .donation-box p {
-          text-align: center;
-      }
-
-      .donation-box button {
-          width: 100%;
-      }
-
-      /* Ensuring the charity boxes are stacked vertically */
-      #foundation-services {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-      }
+  .hero-contact {
+    background: url('../images/contact_banner.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
