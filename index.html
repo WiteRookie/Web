@@ -3,64 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DonationHub - Ways to give</title>
+  <title>DonationHub - Share Meals & End Hunger</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="./frontend/css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <div id="header"></div>
 
-  <!-- Section 1: Hero -->
-  <section class="hero">
-    <div>
-      <h1>Fighting Hunger Together</h1>
-      <p>Connecting food banks across the globe to eliminate hunger and food waste.</p>
-      <a href="#get-involved" class="btn btn-warning mt-3">Get Involved</a>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">DonationHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#fundraising-goals">Fundraising Goals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="btn btn-outline-dark me-2" href="#">Sign In</a></li>
+          <li class="nav-item"><a class="btn btn-warning" href="#donate">Donate Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center bg-light py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Fight Hunger with DonationHub</h1>
+      <p class="lead">With just a few taps, you can provide meals to those in need. Join us in making a difference.</p>
+      <a href="#donate" class="btn btn-warning btn-lg mt-3">Donate Now</a>
     </div>
   </section>
 
-  <!-- Section 2: Our Mission -->
-  <section class="section-padding text-center bg-light">
+  <!-- Fundraising Goals -->
+  <section id="fundraising-goals" class="py-5">
     <div class="container">
-      <h2>Our Mission</h2>
-      <p class="lead mt-3">
-        The DonationHub empowers communities by reducing food insecurity through food bank collaboration and fund collection. 
-        We work in over 40 countries, ensuring surplus food reaches those who need it most.
-      </p>
-    </div>
-  </section>
-
-  <!-- Section 3: Get Involved -->
-  <section class="section-padding text-center" id="get-involved">
-    <div class="container">
-      <h2>Get Involved</h2>
-      <p class="lead mb-4">There are many ways you can contribute to the fight against hunger.</p>
+      <h2 class="text-center mb-4">Current Campaigns</h2>
       <div class="row">
-        <div class="col-md-4 mb-4">
+        <!-- Palestine Campaign -->
+        <div class="col-md-6 mb-4">
           <div class="card h-100 shadow">
+            <img src="https://sharethemeal.org/img/photos/Palestine_child.jpg" class="card-img-top" alt="Palestine Aid">
             <div class="card-body">
-              <h5 class="card-title">Volunteer</h5>
-              <p class="card-text">Give your time to make a difference in your community and help distribute food to families in need.</p>
-              <a href="#" class="btn btn-outline-success">Join Us</a>
+              <h5 class="card-title">Emergency Aid for Palestine</h5>
+              <p class="card-text">Your donation helps provide emergency food assistance to families affected by crisis in Palestine.</p>
+              <a href="#donate" class="btn btn-warning">Donate Now</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <!-- General Hunger Campaign -->
+        <div class="col-md-6 mb-4">
           <div class="card h-100 shadow">
+            <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6" class="card-img-top" alt="Children">
             <div class="card-body">
-              <h5 class="card-title">Donate</h5>
-              <p class="card-text">Your financial support helps us reach more communities and reduce food waste.</p>
-              <a href="#" class="btn btn-outline-danger">Donate Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body">
-              <h5 class="card-title">Partner With Us</h5>
-              <p class="card-text">Organizations and companies can collaborate with us to maximize impact and outreach.</p>
-              <a href="#" class="btn btn-outline-primary">Become a Partner</a>
+              <h5 class="card-title">Feed Hungry Children Worldwide</h5>
+              <p class="card-text">Provide daily meals to children suffering from hunger around the world. Every cent counts.</p>
+              <a href="#donate" class="btn btn-warning">Donate Now</a>
             </div>
           </div>
         </div>
@@ -68,17 +70,66 @@
     </div>
   </section>
 
+  <!-- About Us -->
+  <section id="about" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">About DonationHub</h2>
+      <p class="lead text-center">DonationHub is committed to eliminating global hunger by empowering individuals to provide food with just one tap. We connect donors with trusted food distribution partners in over 40 countries.</p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQs</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+              How do I donate?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Click the “Donate Now” button and choose a campaign. You can donate securely with a credit/debit card.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+              Where does my donation go?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              All funds go directly to trusted partner organizations that provide food assistance in the selected regions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section id="donate" class="bg-warning text-dark text-center py-5">
+    <div class="container">
+      <h2 class="fw-bold">Donate and Make a Difference</h2>
+      <p class="lead">Every $0.50 provides a meal. Start giving today and change lives.</p>
+      <a href="#" class="btn btn-dark btn-lg mt-3">Donate Securely</a>
+    </div>
+  </section>
+
   <!-- Footer -->
-<div id="footer"></div>
-  
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-  
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      &copy; 2025 DonationHub. All rights reserved.
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- JavaScript DOM -->
-  <script src="./frontend/js/index.js"></script>
 </body>
 </html>
