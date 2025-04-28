@@ -1,0 +1,240 @@
+/* .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .nav-link.active {
+    font-weight: bold;
+    color: #0d6efd !important;
+  } */
+
+  .hero {
+    background: url('../images/banner.jpg') no-repeat top center/cover;
+    height: 90vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
+
+  /* styles of sign in page */
+
+  .signin-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .signin-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+/* styles for register page  */
+
+  .register-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  /* styles for fund rising page  */
+
+  .hero-banner {
+    background: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4') center/cover no-repeat;
+    height: 60vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero-banner h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
+
+  /* styles for about page  */
+
+  .hero-about {
+    background: url('../images/about_banner.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  .hero-about h1 {
+    font-size: 3rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
+
+  /* styles for contact page  */
+
+  .hero-contact {
+    background: url('../images/contact_banner.jpg') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
+
+  /* styles for join us page  */
+
+  .hero-join {
+    background: url('../images/join_us_banner.jpg') top/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  }
+  .section-padding {
+    padding: 60px 20px;
+  }
+ 
+ 
+ /* styles for donation page  */
+
+  .hero-donate {
+      background: url('../images/donation_banner.jpg') center/cover no-repeat;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+    .section-padding {
+      padding: 60px 20px;
+    }
+
+     /* styles for partner with us page  */
+
+
+    .hero-partner {
+      background: url('../images/partner_banner.jpg') center/cover no-repeat;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .section-padding {
+      padding: 60px 20px;
+    }
+
+    .service_title { color: #28a745; text-align: center; }
+    .service { background: white; padding: 1rem; margin: 1rem 0; border-left: 5px solid #28a745; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .service h2 { margin-top: 0; color: #28a745; }
+
+    .comments{
+      margin-top: 10px;
+    }
+    .comments .item{
+      margin-bottom: 5px;
+    }
+    .comments .item p{
+      margin-bottom: 0;
+    }
+    .comments .item .name{
+      margin-bottom: 0;
+      color: blueviolet;
+      font-weight: bold;
+    }
+    button.commentInpBtn{
+      background-color: cornflowerblue;
+      color: #fff;
+      border: 1px solid cornflowerblue;
+      border-radius: 4px
+    }
+
+    .profile-container {
+      max-width: 500px;
+      margin: 30px 20px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .profile-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logout{
+      margin-top: 10px;
+      margin-left: 20px;
+      background-color: transparent;
+      border: none;
+      font-weight: bold;
+      font-family: sans-serif;
+      color: cornflowerblue;
+    }
+    .logout i {
+      transform: rotate(180deg);
+    }
+
+    .donation-container {
+      margin: 30px 20px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .donation-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    #donations-all-list{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    #donations-all-list .donation-class{
+      margin-top: 20px;
+      padding: 20px 30px;
+      min-width: 300px;
+      width: 49%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+  
